@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddTutorialComponent } from './add-tutorial.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AddTutorialComponent', () => {
   let component: AddTutorialComponent;
@@ -8,10 +10,10 @@ describe('AddTutorialComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AddTutorialComponent]
-    })
-    .compileComponents();
-    
+      declarations: [AddTutorialComponent],
+      imports: [HttpClientModule, FormsModule],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(AddTutorialComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
